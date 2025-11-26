@@ -47,6 +47,7 @@ export function Contact() {
       } else {
         setStatus("error");
       }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       setStatus("error");
     }
@@ -79,7 +80,7 @@ export function Contact() {
                   href="tel:+37300000000"
                   className="text-2xl text-white font-light hover:text-amber-500 transition block"
                 >
-                  +373 69 000 000
+                  +373 78 371 293
                 </a>
               </div>
               <div className="pt-6 border-t border-white/10">
@@ -100,7 +101,7 @@ export function Contact() {
               <h3 className="text-amber-500 font-serif text-xl mb-2">
                 Atelier
               </h3>
-              <p className="text-slate-300">Chisinau, Republica Moldova</p>
+              <p className="text-slate-300">Sadaclias, Republica Moldova</p>
             </div>
           </div>
 
