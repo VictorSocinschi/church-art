@@ -91,7 +91,7 @@ export function Layout() {
             </p>
             <div className="flex justify-center items-center gap-2 text-amber-600 mb-8">
               <Phone size={16} />
-              <span>+373 00 000 000</span>
+              <span>+373 78 371 293</span>
             </div>
             <p className="text-slate-700 text-xs uppercase tracking-widest">
               © 2025 Vasile Prohnitchi. Toate drepturile rezervate.
