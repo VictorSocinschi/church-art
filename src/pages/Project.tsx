@@ -5,12 +5,12 @@ import { client } from "../contentful";
 
 interface ProjectData {
   title: string;
-  description: string; // Если ты добавил описание в Contentful, если нет - удали
-  images: string[]; // Массив ссылок на картинки
+  description: string;
+  images: string[];
 }
 
 export function Project() {
-  const { id } = useParams(); // Берем ID из адреса (ссылки)
+  const { id } = useParams();
   const [project, setProject] = useState<ProjectData | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -20,22 +20,18 @@ export function Project() {
         const response = await client.getEntry(id as string);
         const fields: any = response.fields;
 
-        // --- ВОТ ЗДЕСЬ МЫ ИСПРАВЛЯЕМ ОШИБКУ ---
-        // Мы проверяем каждый шаг знаком вопроса (?.)
-        // Если fields нет, или file нет — код не сломается, а вернет null
         const cleanImages = (fields.images || [])
           .map((img: any) => {
             const url = img?.fields?.file?.url;
             return url ? "https:" + url : null;
           })
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          .filter((url: any) => url !== null); // Убираем пустые (null) значения
+          .filter((url: any) => url !== null);
         // ---------------------------------------
 
         setProject({
           title: fields.title,
           description: fields.description,
-          images: cleanImages, // Используем наш чистый список
+          images: cleanImages,
         });
         setLoading(false);
       } catch (error) {
@@ -70,8 +66,6 @@ export function Project() {
           <h1 className="text-4xl font-serif text-white">{project.title}</h1>
         </div>
 
-        {/* СЕТКА ФОТОГРАФИЙ ЭТОГО ПРОЕКТА */}
-        {/* masonry-grid: Можно сделать просто сетку */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {project.images.map((img, index) => (
             <div

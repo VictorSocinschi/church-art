@@ -4,7 +4,6 @@ export function Contact() {
   return (
     <div className="pt-28 pb-20 bg-slate-950 min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
-        {/* Заголовок */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-serif text-amber-500 mb-4">
             Contacte
@@ -15,11 +14,8 @@ export function Contact() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* --- ЛЕВАЯ КОЛОНКА --- */}
           <div className="space-y-8">
-            {/* БЛОК 1: ТЕЛЕФОН + FACEBOOK (Объединили) */}
             <div className="p-6 border border-white/10 rounded-lg bg-slate-900/50">
-              {/* Секция Телефона */}
               <div className="mb-8">
                 <h3 className="text-amber-500 font-serif text-xl mb-2">
                   Telefon
@@ -35,7 +31,6 @@ export function Contact() {
                 </a>
               </div>
 
-              {/* Секция Facebook (Через разделитель) */}
               <div className="pt-6 border-t border-white/10">
                 <p className="text-slate-400 text-sm mb-4 uppercase tracking-widest">
                   Social Media
@@ -52,7 +47,6 @@ export function Contact() {
               </div>
             </div>
 
-            {/* БЛОК 2: АТЕЛЬЕ (Адрес) */}
             <div className="p-6 border border-white/10 rounded-lg bg-slate-900/50">
               <h3 className="text-amber-500 font-serif text-xl mb-2">
                 Atelier
@@ -61,7 +55,6 @@ export function Contact() {
             </div>
           </div>
 
-          {/* --- ПРАВАЯ КОЛОНКА: ФОРМА --- */}
           <form className="space-y-6 bg-slate-900 p-8 rounded-lg border border-white/5">
             <div>
               <label className="block text-slate-400 text-sm mb-2 uppercase tracking-widest">

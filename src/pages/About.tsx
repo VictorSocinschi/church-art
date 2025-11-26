@@ -1,26 +1,19 @@
-// 1. ИМПОРТ: Подключаем настоящее фото художника
 import artistImg from "../assets/artist.jpg";
 
 export function About() {
   return (
     <div className="pt-24 pb-20 bg-slate-900 min-h-screen">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* --- ЛЕВАЯ ЧАСТЬ: ФОТО --- */}
         <div className="relative">
-          {/* Декоративная рамка */}
           <div className="absolute inset-0 border-2 border-amber-500/30 translate-x-4 translate-y-4 rounded-lg"></div>
 
-          {/* Фото художника */}
           <img
-            // 2. ИСПОЛЬЗОВАНИЕ: Ставим переменную artistImg в src
             src={artistImg}
             alt="Vasile Prohnitchi"
-            // object-top: Важное дополнение! Говорит браузеру: "Если обрезаешь фото, фокусируйся на верхней части" (на лице).
             className="relative w-full h-[500px] object-cover object-top rounded-lg shadow-2xl "
           />
         </div>
 
-        {/* --- ПРАВАЯ ЧАСТЬ: ТЕКСТ (Без изменений) --- */}
         <div>
           <span className="text-amber-500 text-sm uppercase tracking-widest font-bold">
             Despre Artist

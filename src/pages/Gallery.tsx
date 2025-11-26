@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; // Импортируем Link
+import { Link } from "react-router-dom";
 import { client } from "../contentful";
 
 interface Work {
@@ -8,7 +8,7 @@ interface Work {
   title: string;
   category: string;
   year: string;
-  coverImage: string; // Только одна картинка для обложки
+  coverImage: string;
 }
 
 export function Gallery() {
@@ -21,7 +21,6 @@ export function Gallery() {
         const response = await client.getEntries({ content_type: "work" });
 
         const formattedWorks = response.items.map((item: any) => {
-          // Берем ПЕРВУЮ картинку из массива images как обложку
           const firstImage = item.fields.images?.[0]?.fields?.file?.url;
 
           return {
@@ -29,7 +28,7 @@ export function Gallery() {
             title: item.fields.title,
             category: item.fields.category,
             year: item.fields.year,
-            coverImage: firstImage ? "https:" + firstImage : "", // Защита, если картинок нет
+            coverImage: firstImage ? "https:" + firstImage : "",
           };
         });
 
@@ -62,7 +61,6 @@ export function Gallery() {
       ) : (
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {works.map((work) => (
-            // ССЫЛКА НА СТРАНИЦУ ПРОЕКТА
             <Link
               key={work.id}
               to={`/gallery/${work.id}`}
