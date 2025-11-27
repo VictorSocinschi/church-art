@@ -101,7 +101,7 @@ export function Contact() {
               <h3 className="text-amber-500 font-serif text-xl mb-2">
                 Atelier
               </h3>
-              <p className="text-slate-300">Sadaclias, Republica Moldova</p>
+              <p className="text-slate-300">Sadaclia, Republica Moldova</p>
             </div>
           </div>
 
